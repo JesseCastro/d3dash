@@ -1,0 +1,93 @@
+<html>
+<head>
+  <title>D3 Dashboard Library Examples</title>
+</head>
+<body>
+<h3>Line Chart</h3>
+<div class="lineChart"></div>
+
+<h3>Timeseries Line Chart</h3>
+<div class="timelineChart"></div>
+
+<h3>Bar Chart</h3>
+<div class="barChart"></div>
+
+<h3>Pie Chart</h3>
+<div class="pieChart"></div>
+
+<h3>Gauge Chart</h3>
+<div class="gaugeChart"></div>
+
+<h3>World Map (countries)</h3>
+<div class="worldMap" style="position: relative; height: 300px; width: 500px;"></div>
+
+<!--h3>World Map (regions)</h3>
+<div class="worldMap" style="position: relative; height: 300px; width: 500px;"></div -->
+
+<h3>US Map</h3>
+<div class="usMap" style="position: relative; width: 500px; height: 300px;"></div>
+
+<script type="text/javascript" src="./build/d3dash.js"></script>
+<script type="text/javascript">
+  (function () {
+    var dataset = [
+      ['foo',               10, 20, 13, 84, 13, 19, 40, 53, 13, 17],
+      ['bar',               50, 20, 10, 40, 15, 25, 24, 23, 22, 21],
+      ['bork',              60, 90, 10, 45, 85, 65, 11, 26, 89, 76],
+      ['blat with a space', 15, 20, 63, 64, 19, 29, 45, 13, 43, 12]
+    ];
+    var dates = ['2016-10-01', '2016-10-02', '2016-10-03', '2016-10-04', '2016-10-05', '2016-10-06', '2016-10-07', '2016-10-08', '2016-10-09', '2016-10-10']
+
+    var pieset = [
+      ['foo', 10],
+      ['bar', 50],
+      ['bork', 60],
+      ['blat with a space', 15]
+    ];
+    var gaugeset = [
+      ['foo', 10]
+    ];
+    var worldset = [
+      ["BLR",75],["BLZ",43],["RUS",50],["RWA",88],["SRB",21],["TLS",43],
+      ["REU",21],["TKM",19],["TJK",60],["ROU",4],["TKL",44],["GNB",38],
+      ["GUM",67],["GTM",2],["SGS",95],["GRC",60],["GNQ",57],["GLP",53],
+      ["JPN",59],["GUY",24],["GGY",4],["GUF",21],["GEO",42],["GRD",65],
+      ["GBR",14],["GAB",47],["SLV",15],["GIN",19],["GMB",63],["GRL",56],
+      ["ERI",57],["MNE",93],["MDA",39],["MDG",71],["MAF",16],["MAR",8],
+      ["MCO",25],["UZB",81],["MMR",21],["MLI",95],["MAC",33],["MNG",93],
+      ["MHL",15],["MKD",52],["MUS",19],["MLT",69],["MWI",37],["MDV",44],
+      ["MTQ",13],["MNP",21],["MSR",89],["MRT",20],["IMN",72],["UGA",59],
+      ["TZA",62],["MYS",75],["MEX",80],["ISR",77],["FRA",54],["IOT",56],
+      ["SHN",91],["FIN",51],["FJI",22],["FLK",4],["FSM",69],["FRO",70],
+      ["NIC",66],["NLD",53],["NOR",7],["NAM",63],["VUT",15],["NCL",66],
+      ["NER",34],["NFK",33],["NGA",45],["NZL",96],["NPL",21],["NRU",13],
+      ["NIU",6],["COK",19],["XKX",32],["CIV",27],["CHE",65],["COL",64],
+      ["CHN",16],["CMR",70],["CHL",15],["CCK",85],["CAN",76],["COG",20],
+      ["CAF",93],["COD",36],["CZE",77],["CYP",65],["CXR",14],["CRI",31],
+      ["CUW",67],["CPV",63],["CUB",40],["SWZ",58],["SYR",96],["SXM",31]];
+    var usset = [
+      ["AL",75],["HI",43],["MA",50],["NM",88],["SD",21],
+      ["AK",21],["ID",19],["MI",60],["NY",42],["TN",44],
+      ["AZ",67],["IL",22],["MN",95],["NC",60],["TX",57],
+      ["AR",59],["IN",24],["MS",42],["ND",21],["UT",42],
+      ["CA",14],["IA",47],["MO",15],["OH",19],["VT",63],
+      ["CO",57],["KS",93],["MT",39],["OK",71],["VA",16],
+      ["CT",25],["KY",81],["NE",21],["OR",95],["WA",33],
+      ["DE",15],["LA",52],["NV",19],["PA",69],["WV",37],
+      ["FL",13],["ME",21],["NH",89],["RI",20],["WI",72],
+      ["GA",62],["MD",75],["NJ",80],["SC",77],["WY",54]];
+
+
+    var lineChart = D3Dash.LineChart.build('.lineChart', dataset);
+    var timelineChart = D3Dash.TimelineChart.build('.timelineChart', dates, dataset);
+    var barChart = D3Dash.BarChart.build('.barChart', dataset);
+    var pieChart = D3Dash.PieChart.build('.pieChart', pieset, 'Sample Pie Chart');
+    var gaugeChart = D3Dash.GaugeChart.build('.gaugeChart', gaugeset);
+    var worldMap = D3Dash.WorldMap.build('.worldMap', worldset);
+    var usMap = D3Dash.USMap.build('.usMap', usset);
+
+
+  })();
+</script>
+</body>
+</html>
