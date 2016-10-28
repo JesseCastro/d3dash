@@ -2,8 +2,6 @@ sudo: required
 language: node_js
 node_js:
   - "node"
-before_install:
-  - "npm install && npm run build"
 script:
-  - "npm run ci"
+  - "npm run build && npm run ci"
 
