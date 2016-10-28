@@ -34,7 +34,7 @@ module.exports = {
         popupTemplate: function(geo, data) {
           var locals = {
             name:  geo.properties.name,
-            value: data.numberOfThings || 0
+            value: data.numberOfThings || 0,
           };
           return popup(locals);
         },

@@ -1,6 +1,9 @@
 sudo: required
-addons:
-  firefox: "latest"
 language: node_js
 node_js:
   - "node"
+before_install:
+  - "npm run build"
+script:
+  - "npm run ci"
+
