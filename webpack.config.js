@@ -1,7 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var pkg = require('./package.json');
-var globalconf = require('./src/conf/globalConf.js');
 module.exports = {
   module: {
     loaders: [{
@@ -22,8 +20,11 @@ module.exports = {
         plugins: ['transform-runtime']
       }
     }, {
-      test: /\.ejs$/,
-      loader: "ejs"
+      test: /\.pug$/,
+      loader: "pug"
+    },, {
+      test: /\.jade$/,
+      loader: "pug"
     }, {
       test: /bootstrap\/js\//,
       loader: 'imports?jQuery=jquery'
@@ -59,6 +60,9 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       "c3": "c3"
+    }),
+    new webpack.ProvidePlugin({
+      "globalconf": '../../conf'
     }),
   ],
   externals: {

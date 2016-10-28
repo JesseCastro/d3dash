@@ -1,7 +1,3 @@
-var config = require('./config.js');
-var template = require('./templates/barChart.ejs');
-require('./stylesheets/barChart.less');
-
 module.exports = {
   build: function(selector, data) {
     var typeConf = {};

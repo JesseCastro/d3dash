@@ -1,7 +1,3 @@
-var config = require('./config.js');
-var template = require('./templates/pieChart.ejs');
-require('./stylesheets/pieChart.less');
-
 module.exports = {
   build: function(selector, data, titleText) {
     return c3.generate({

@@ -8,5 +8,5 @@ module.exports = {
   highlight: {
     warm: '#BD3613',
     cool: '#595AB7',
-  }
+  },
 };

@@ -1,7 +1,3 @@
-var config = require('./config.js');
-var template = require('./templates/gaugeChart.ejs');
-require('./stylesheets/gaugeChart.less');
-
 module.exports = {
   build: function(selector, data, titleText) {
     return c3.generate({

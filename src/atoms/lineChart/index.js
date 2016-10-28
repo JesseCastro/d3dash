@@ -1,7 +1,3 @@
-var config = require('./config.js');
-var template = require('./templates/lineChart.ejs');
-require('./stylesheets/lineChart.less');
-
 module.exports = {
   build: function(selector, data) {
     return c3.generate({
