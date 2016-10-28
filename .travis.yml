@@ -3,7 +3,7 @@ language: node_js
 node_js:
   - "node"
 before_install:
-  - "npm run build"
+  - "npm install && npm run build"
 script:
   - "npm run ci"
 
